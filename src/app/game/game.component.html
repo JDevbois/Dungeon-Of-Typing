@@ -1,0 +1,10 @@
+<p>score: {{player.score}}</p>
+<p>monster hp: {{foe.hp}}</p>
+<p>Your hp: {{player.hp}}</p>
+<p>{{wordToType}}</p>
+<p>{{timeElapsed}}s</p>
+<form [formGroup]="damageForm">
+    <input formControlName="wordToTypeCtrl" type="text">
+    <button [disabled]="gameOver" (click)="onSubmit()" type="submit">Fight</button>
+</form>
+<h3 *ngIf="gameOver">Game Over!</h3>
